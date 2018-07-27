@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace easy_stocks.Pages
+namespace EasyStocks.Pages
 {
     public class ErrorModel : PageModel
     {

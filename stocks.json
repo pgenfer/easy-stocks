@@ -1,0 +1,67 @@
+{
+  "Items": [
+    {
+      "Symbol": "ADS.F",
+      "BuyingDate": "2017-09-29T00:00:00+02:00",
+      "BuyingRate": 160.6,
+      "StopRate": 193.049988,
+      "Name": "Adidas AG"
+    },
+    {
+      "Symbol": "RHM.F",
+      "BuyingDate": "2017-04-28T00:00:00+02:00",
+      "BuyingRate": 84.99,
+      "StopRate": 105.929993,
+      "Name": "Rheinmetall AG"
+    },
+    {
+      "Symbol": "BCO.F",
+      "BuyingDate": "2017-02-24T00:00:00",
+      "BuyingRate": 168.27,
+      "StopRate": 284.409,
+      "Name": "The Boeing Company"
+    },
+    {
+      "Symbol": "ALV.F",
+      "BuyingDate": "2017-04-12T00:00:00+02:00",
+      "BuyingRate": 171.66,
+      "StopRate": 180.809982,
+      "Name": "Allianz SE"
+    },
+    {
+      "Symbol": "ALV.F",
+      "BuyingDate": "2017-07-19T00:00:00+02:00",
+      "BuyingRate": 180.416,
+      "StopRate": 180.809982,
+      "Name": "Allianz SE"
+    },
+    {
+      "Symbol": "LOM.F",
+      "BuyingDate": "2018-03-23T00:00:00+01:00",
+      "BuyingRate": 257.0,
+      "StopRate": 266.4,
+      "Name": "LOCKHEED MARTIN CORP"
+    },
+    {
+      "Symbol": "T1L.F",
+      "BuyingDate": "2018-03-23T00:00:00+01:00",
+      "BuyingRate": 10.5,
+      "StopRate": 16.7039986,
+      "Name": "S IMMO AG"
+    },
+    {
+      "Symbol": "FOO.F",
+      "BuyingDate": "2018-07-03T00:00:00+02:00",
+      "BuyingRate": 119.18,
+      "StopRate": 115.38,
+      "Name": "SALESFORCE"
+    },
+    {
+      "Symbol": "PYPL.VI",
+      "BuyingDate": "2018-07-12T00:00:00+02:00",
+      "BuyingRate": 74.92,
+      "StopRate": 71.1629944,
+      "Name": "PayPal"
+    }
+  ]
+}

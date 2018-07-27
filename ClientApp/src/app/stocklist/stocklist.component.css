@@ -1,0 +1,60 @@
+
+
+
+
+.stock-list{
+    width:100%;
+}
+
+.col-md-6{
+    padding-left:0px;
+}
+
+.list-group-item{
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+
+
+.stock-item{
+    
+}
+
+.stock-item__secondary-information{
+    height:20px;
+    font-size:0.8em;
+}
+
+.stock-item__name{
+    font-size:1.2em;
+    height:20px;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.stock-item__current-rate{
+    vertical-align: middle;
+    font-size:1.2em;
+    display: flex;
+    align-items: center;
+    height:50px;
+}
+
+.stock-item__change{
+    font-size:2em;
+    vertical-align: middle;
+    text-align: center;
+    height:50px;
+}
+
+.stock-item__change-positive{
+    background:#9CCC65;
+    color:white;
+}
+
+.stock-item__change-negative{
+    background:#EF5350;
+    color:white;
+}

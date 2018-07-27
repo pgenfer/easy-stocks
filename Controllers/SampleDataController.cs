@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace easy_stocks.Controllers
+namespace EasyStocks.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
