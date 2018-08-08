@@ -15,11 +15,18 @@ namespace EasyStocks.Controllers
     [HttpGet("[action]")]
     public async Task<ActionResult> CurrentAccountItems()
     {
-      var accountItemRepository = new AccountItemRepository();
-      var dailyStockDataService = new CurrentStockDataService();
-      var accountItems = await accountItemRepository.ReadFromFile("stocks.json");
-      var currentStockItems = await dailyStockDataService.GetDailyInformationForShareAsync(accountItems);
-      return Ok(currentStockItems);
+            var accountItemRepository = new AccountItemRepository();
+            var dailyStockDataService = new CurrentStockDataService();
+            var stopQuoteCalculationService = new StopQuoteCalcuationService();
+            var accountItems = await accountItemRepository.ReadFromFile("stocks.json");
+            var currentStockItems = await dailyStockDataService.GetDailyInformationForShareAsync(accountItems);
+            stopQuoteCalculationService.UpdateStopQuotes(currentStockItems);
+            if(currentStockItems.SelectMany(x => x.AccountItems).Any(x => x.HasChanged))
+            {
+                await accountItemRepository.WriteToFileAsync(currentStockItems.SelectMany(x => x.AccountItems), "stocks2.json");
+            }
+               
+            return Ok(currentStockItems);
     }
   }
 }

@@ -12,5 +12,6 @@ namespace easystocks.Model
       public float BuyingRate { get; set; }
       public DateTime BuyingDate { get; set; }
       public float StopRate { get; set; }
+      public bool HasChanged { get; set; }
     }
 }

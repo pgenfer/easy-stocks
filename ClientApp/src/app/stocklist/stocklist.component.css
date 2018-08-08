@@ -1,60 +1,45 @@
-
-
-
-
 .stock-list{
     width:100%;
+    padding:5px;
 }
-
-.col-md-6{
-    padding-left:0px;
-}
-
-.list-group-item{
-    padding-top:0px;
-    padding-bottom:0px;
-}
-
-
 
 .stock-item{
-    
-}
-
-.stock-item__secondary-information{
-    height:20px;
-    font-size:0.8em;
+    border-bottom: 1px solid lightgray;
+    cursor:pointer;
 }
 
 .stock-item__name{
     font-size:1.2em;
-    height:20px;
-    margin-top:5px;
-    margin-bottom:5px;
     font-weight:bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.stock-item__name-stop-reached{
+    color:#EF5350;
+}
+
+.stock-item__secondary-information{
+    font-size:0.5em;
 }
 
 .stock-item__current-rate{
-    vertical-align: middle;
-    font-size:1.2em;
-    display: flex;
-    align-items: center;
-    height:50px;
+    font-size:1.0em;
 }
 
 .stock-item__change{
-    font-size:2em;
-    vertical-align: middle;
-    text-align: center;
-    height:50px;
+    font-size:1.2em;
+    color:white;
+    margin-top:5px;
 }
 
-.stock-item__change-positive{
+.stock-item__change-background-positive{
     background:#9CCC65;
-    color:white;
 }
 
-.stock-item__change-negative{
+.stock-item__change-background-negative{
     background:#EF5350;
-    color:white;
 }

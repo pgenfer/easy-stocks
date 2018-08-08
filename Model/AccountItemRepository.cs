@@ -11,7 +11,7 @@ namespace EasyStocks.Model
     public class AccountItemRepository
     {
 
-      public async Task WriteToFile(IEnumerable<AccountItem> accountItems, string fileName)
+      public async Task WriteToFileAsync(IEnumerable<AccountItem> accountItems, string fileName)
       {
         var jsonContent = JsonConvert.SerializeObject(accountItems,
           Formatting.Indented,

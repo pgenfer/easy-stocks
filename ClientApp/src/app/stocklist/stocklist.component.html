@@ -1,27 +1,30 @@
-<div>
-  <div class='list-group'>
-    <div class='stock-item list-group-item' *ngFor="let stockItem of stocks;">
-      <div class='row'>
-        <div class='col-md-4'>
-          <div class='stock-item__name'>
-            {{stockItem.name}}
-          </div>
-          <div class='stock-item__secondary-information'>
-            <div class='col-md-4'>
-              {{stockItem.symbol}}
-            </div>
-            <div class='col-md-6 stock-item__secondary-information'>
-              {{stockItem.lastTradingDate | date:'d. MMM, y HH:mm'}}
-            </div>
-          </div>
+<div class='container no-gutters stock-list'>
+  <div class='row stock-item no-gutters' *ngFor='let stockItem of stockService.stocks;'
+    (click)='this.router.navigateByUrl("/stock-item");'>
+    <div class='col-5'>
+      <div class='row no-gutters'>
+        <div class='col stock-item__name'
+             [ngClass]='stockItem.isStopRateReached ? "stock-item__name-stop-reached" : ""'>
+          {{stockItem.name}}
         </div>
-        <div class='col-md-1 stock-item__current-rate'>
-          {{stockItem.currentRate | number:'1.2-2'}}
+      </div>
+      <div class='row no-gutters'>
+        <div class='col-3 stock-item__secondary-information'>
+          {{stockItem.symbol}}
         </div>
-        <div class='col-md-2 stock-item__change' [ngClass]='stockItem.isPositive? "stock-item__change-positive" : "stock-item__change-negative"'>
-          {{stockItem.isPositive ? " + " : " - "}}{{stockItem.dailyChangeInPercent | number:'1.2-2'}} %
+        <div class='col-9 stock-item__secondary-information text-right'>
+            {{stockItem.lastTradingDate | date:'EEEE, HH:mm'}}
         </div>
       </div>
     </div>
+    <div class='col-3 stock-item__current-rate text-center align-self-center'>
+        {{stockItem.currentRate | number:'1.2-2'}}
+    </div>
+    <div class='col-4' [ngClass]='stockItem.isPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
+        <div class='stock-item__change text-center'>
+            {{stockItem.isPositive ? " + " : " - "}}{{stockItem.dailyChangeInPercentAbsolute | number:'1.2-2'}} %
+        </div>
+    </div>
   </div>
 </div>
+

@@ -7,12 +7,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { StockListComponent } from './stocklist/stocklist.component';
+import { StockItemComponent } from './stock-item/stock-item.component';
+import { StockService } from './providers/stock.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    StockListComponent
+    StockListComponent,
+    StockItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -21,9 +24,12 @@ import { StockListComponent } from './stocklist/stocklist.component';
     RouterModule.forRoot([
       { path: '', component: StockListComponent, pathMatch: 'full' },
       { path: 'stocks', component: StockListComponent },
+      { path: 'stock-item', component: StockItemComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    StockService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
