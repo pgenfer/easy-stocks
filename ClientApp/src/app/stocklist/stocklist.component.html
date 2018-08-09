@@ -1,6 +1,6 @@
 <div class='container no-gutters stock-list'>
   <div class='row stock-item no-gutters' *ngFor='let stockItem of stockService.stocks;'
-    (click)='this.router.navigateByUrl("/stock-item");'>
+    (click)='this.router.navigateByUrl("/stock-item/" + stockItem.symbol);'>
     <div class='col-5'>
       <div class='row no-gutters'>
         <div class='col stock-item__name'

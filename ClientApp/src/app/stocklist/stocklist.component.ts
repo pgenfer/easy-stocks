@@ -9,7 +9,7 @@ import { StockService } from '../providers/stock.service';
 })
 export class StockListComponent {
   constructor(
-    public readonly router:Router,
+    public readonly router: Router,
     public readonly stockService: StockService) {
   }
 }

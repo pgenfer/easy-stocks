@@ -1,3 +1,9 @@
-<p>
-  stock-item works!
-</p>
+<!--
+  Show the current data of the stock
+  And then a list of all account items,
+  showing their overall change since they were bought.
+  Add a "Delete" button to every account item
+-->
+<div *ngFor='let accountItem of stockItem.accountItems'>
+  Overall change: {{ 100 / accountItem.buyingRate * ( stockItem.currentRate - accountItem.buyingRate)}}
+</div>

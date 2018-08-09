@@ -24,7 +24,7 @@ import { StockService } from './providers/stock.service';
     RouterModule.forRoot([
       { path: '', component: StockListComponent, pathMatch: 'full' },
       { path: 'stocks', component: StockListComponent },
-      { path: 'stock-item', component: StockItemComponent },
+      { path: 'stock-item/:symbol', component: StockItemComponent },
     ])
   ],
   providers: [
