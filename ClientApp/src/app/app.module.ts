@@ -9,13 +9,15 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { StockListComponent } from './stocklist/stocklist.component';
 import { StockItemComponent } from './stock-item/stock-item.component';
 import { StockService } from './providers/stock.service';
+import { AddStockItemComponent } from './add-stock-item/add-stock-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     StockListComponent,
-    StockItemComponent
+    StockItemComponent,
+    AddStockItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -25,6 +27,7 @@ import { StockService } from './providers/stock.service';
       { path: '', component: StockListComponent, pathMatch: 'full' },
       { path: 'stocks', component: StockListComponent },
       { path: 'stock-item/:symbol', component: StockItemComponent },
+      { path: 'add-stock-item', component: AddStockItemComponent },
     ])
   ],
   providers: [
