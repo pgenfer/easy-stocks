@@ -61,4 +61,6 @@ export interface AccountItem {
     stopRate: number;
     buyingRate: number;
     buyingDate: Date;
+    absoluteOverallChangeInPercent: number;
+    overallChangeIsPositive: boolean;
   }

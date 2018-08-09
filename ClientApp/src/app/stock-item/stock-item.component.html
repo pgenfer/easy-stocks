@@ -1,9 +1,53 @@
-<!--
-  Show the current data of the stock
-  And then a list of all account items,
-  showing their overall change since they were bought.
-  Add a "Delete" button to every account item
--->
-<div *ngFor='let accountItem of stockItem.accountItems'>
-  Overall change: {{ 100 / accountItem.buyingRate * ( stockItem.currentRate - accountItem.buyingRate)}}
+<div class='container no-gutters' *ngIf='stockItem'>
+    <div class='row no-gutters'>
+      <div class='col-5'>
+        <div class='row no-gutters'>
+          <div class='col stock-item__name'
+               [ngClass]='stockItem.isStopRateReached ? "stock-item__name-stop-reached" : ""'>
+            {{stockItem.name}}
+          </div>
+        </div>
+        <div class='row no-gutters'>
+          <div class='col-3 stock-item__secondary-information'>
+            {{stockItem.symbol}}
+          </div>
+          <div class='col-9 stock-item__secondary-information text-right'>
+              {{stockItem.lastTradingDate | date:'EEEE, HH:mm'}}
+          </div>
+        </div>
+      </div>
+      <div class='col-3 stock-item__current-rate text-center align-self-center'>
+          {{stockItem.currentRate | number:'1.2-2'}}
+      </div>
+      <div class='col-4' [ngClass]='stockItem.isPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
+          <div class='stock-item__change text-center'>
+              {{stockItem.isPositive ? " + " : " - "}}{{stockItem.dailyChangeInPercentAbsolute | number:'1.2-2'}} %
+          </div>
+      </div>
+    </div>
+    <!-- show list of account items for this stock -->
+    <div *ngFor='let accountItem of stockItem.accountItems'>
+      <hr/>
+      <div class='row no-gutters'>
+        <div class='col-8 stock-item__label'>Buying Date:</div>
+        <div class='col-4 stock-item__label text-center'>{{accountItem.buyingDate | date:'dd.MM.yyyy'}}</div>
+      </div>
+      <div class='row no-gutters'>
+          <div class='col-8 stock-item__label'>Buying Rate:</div>
+          <div class='col-4 stock-item__label text-center'>{{accountItem.buyingRate | number:'1.2-2'}}</div>
+      </div>
+      <div class='row no-gutters'>
+          <div class='col-8 stock-item__label'>Stop Rate:</div>
+          <div class='col-4 stock-item__label text-center'>{{accountItem.stopRate | number:'1.2-2'}}</div>
+      </div>
+      <div class='row no-gutters'>
+          <div class='col-8 stock-item__label'>Overall Change:</div>
+          <div class='col-4 stock-item__label stock-item__overall-change text-center' 
+          [ngClass]='accountItem.overallChangeIsPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
+              {{ accountItem.overallChangeIsPositive ? " + " : " - "}}{{accountItem.absoluteOverallChangeInPercent | number:'1.2-2'}} %
+          </div>
+        </div>
+    </div>
 </div>
+
+

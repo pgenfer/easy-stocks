@@ -26,6 +26,12 @@ export class StockItemComponent implements OnInit {
     this._stockService.getStockForSymbol(this.symbol).subscribe(
       stock => {
         this.stockItem = stock;
+        this.stockItem.accountItems.forEach(
+          x => {
+            const overallChange = 100 / x.buyingRate * ( this.stockItem.currentRate - x.buyingRate);
+            x.absoluteOverallChangeInPercent = Math.abs(overallChange);
+            x.overallChangeIsPositive = overallChange >= 0;
+          });
       });
   }
 }
