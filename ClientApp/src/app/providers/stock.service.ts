@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '../../../node_modules/@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
@@ -11,10 +11,14 @@ export class StockService {
     constructor(
         private readonly _http: HttpClient,
         @Inject('BASE_URL') private readonly _baseUrl: string) {
-            _http.get<Stock[]>(`${_baseUrl}api/Stocks/CurrentAccountItems`).subscribe(
-                result => {
-                  this.stocks = result;
-              }, error => console.error(error));
+        this.reload();
+    }
+
+    public reload(): void {
+      this._http.get<Stock[]>(`${this._baseUrl}api/Stocks/CurrentAccountItems`).subscribe(
+        result => {
+          this.stocks = result;
+      }, error => console.error(error));
     }
 
     /**
@@ -33,6 +37,26 @@ export class StockService {
             stockSource.next(result);
           });
       return stockSource.asObservable();
+    }
+
+    public findNewStockBySymbol(symbol: string): Observable<AccountItem> {
+      const stockSource = new Subject<AccountItem>();
+      this._http.get<AccountItem>(`${this._baseUrl}api/Stocks/FindStockBySymbol/`, {
+        params: {
+          'symbol': symbol
+        }}).subscribe(
+          result => {
+            stockSource.next(result);
+          });
+      return stockSource.asObservable();
+    }
+
+    public createNewAccountItem(newAccountItem: NewAccountItem): Observable<boolean> {
+      const resultSource = new Subject<boolean>();
+      const headers = new HttpHeaders().set('content-type', 'application/json');
+      this._http.post<boolean>(`${this._baseUrl}api/Stocks/NewAccountItem/`, newAccountItem, {headers}).subscribe(
+        result => resultSource.next(result));
+      return resultSource.asObservable();
     }
 }
 
@@ -63,4 +87,17 @@ export interface AccountItem {
     buyingDate: Date;
     absoluteOverallChangeInPercent: number;
     overallChangeIsPositive: boolean;
-  }
+}
+
+/**
+ * this data structure stores the information
+ * about a new stock item that is entered by the user
+ */
+export class NewAccountItem {
+    stockName: string;
+    stockSymbol: string;
+    buyingRate: number;
+    buyingDate: Date;
+    stopRate: number;
+    isStockFound = false;
+}

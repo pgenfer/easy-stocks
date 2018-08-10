@@ -1,3 +1,45 @@
-<p>
-  add-stock-item works!
-</p>
+<div class='newstockitem__form'>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="newAccountItem.stockName" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="alterEgo">Symbol</label>
+    <input type="text" class="form-control" id="symbol" [(ngModel)]="newAccountItem.stockSymbol" name="alterEgo">
+  </div>
+
+  <div class='btn btn-primary float-right' (click)='searchStockSymbol()'>Search
+  </div>
+  <div *ngIf='message !== ""'>
+    <div class='label float-left' [ngClass]='isErrorMessage ? "label-warning" : "label-success"'>
+      {{message}}
+    </div>
+  </div>
+  
+
+  <div *ngIf='newAccountItem.isStockFound'>
+    <div class="form-group">
+      <label for="buyingRate">Buying Rate</label>
+      <input type="number" class="form-control" id="buyingRate" [(ngModel)]="newAccountItem.buyingRate" name="buyingRate">
+    </div>
+
+    <div class="form-group">
+      <label for="stopRate">Stop Rate</label>
+      <input type="number" class="form-control" id="stopRate" [(ngModel)]="newAccountItem.stopRate" name="stopRate">
+    </div>
+
+    <div class="form-group">
+      <label for="buyingDate">Buying Date</label>
+      <input type="datetime" class="form-control" 
+      id="buyingDate" 
+      [(ngModel)] ="newAccountItem.buyingDate" 
+      name="buyingDate">
+    </div>
+
+    <div class='btn btn btn-secondary float-right newstockitem__button' (click)='cancel()'>Cancel
+    </div>
+    <div class='btn btn btn-success float-right newstockitem__button' (click)='saveStock()'>Save
+    </div>
+  </div>  
+</div>

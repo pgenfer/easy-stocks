@@ -7,7 +7,10 @@ import { StockService } from '../providers/stock.service';
   templateUrl: './stocklist.component.html',
   styleUrls: ['./stocklist.component.css']
 })
-export class StockListComponent {
+export class StockListComponent implements OnInit {
+  ngOnInit(): void {
+    this.stockService.reload();
+  }
   constructor(
     public readonly router: Router,
     public readonly stockService: StockService) {
