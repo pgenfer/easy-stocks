@@ -12,9 +12,9 @@
   <div class='btn btn-primary float-right' (click)='searchStockSymbol()'>Search
   </div>
   <div *ngIf='message !== ""'>
-    <div class='label float-left' [ngClass]='isErrorMessage ? "label-warning" : "label-success"'>
+    <p class='badge float-left' [ngClass]='isErrorMessage ? "badge-warning" : "badge-success"'>
       {{message}}
-    </div>
+    </p>
   </div>
   
 
