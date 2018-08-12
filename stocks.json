@@ -1,67 +1,103 @@
 {
   "Items": [
     {
-      "Symbol": "ADS.F",
-      "BuyingDate": "2017-09-29T00:00:00+02:00",
-      "BuyingRate": 160.6,
-      "StopRate": 193.049988,
-      "Name": "Adidas AG"
-    },
-    {
-      "Symbol": "RHM.F",
-      "BuyingDate": "2017-04-28T00:00:00+02:00",
-      "BuyingRate": 84.99,
-      "StopRate": 105.929993,
-      "Name": "Rheinmetall AG"
-    },
-    {
-      "Symbol": "BCO.F",
-      "BuyingDate": "2017-02-24T00:00:00",
-      "BuyingRate": 168.27,
-      "StopRate": 284.409,
-      "Name": "The Boeing Company"
-    },
-    {
+      "Name": "Allianz SE",
       "Symbol": "ALV.F",
-      "BuyingDate": "2017-04-12T00:00:00+02:00",
       "BuyingRate": 171.66,
-      "StopRate": 180.809982,
-      "Name": "Allianz SE"
+      "BuyingDate": "2017-04-12T00:00:00+02:00",
+      "StopRate": 180.809982
     },
     {
+      "Name": "Allianz SE",
       "Symbol": "ALV.F",
-      "BuyingDate": "2017-07-19T00:00:00+02:00",
       "BuyingRate": 180.416,
-      "StopRate": 180.809982,
-      "Name": "Allianz SE"
+      "BuyingDate": "2017-07-19T00:00:00+02:00",
+      "StopRate": 180.809982
     },
     {
+      "Name": "THQ Nordic",
+      "Symbol": "TH9.BE",
+      "BuyingRate": 19.84,
+      "BuyingDate": "2018-08-10T13:24:48+02:00",
+      "StopRate": 16.182
+    },
+    {
+      "Name": "LOCKHEED MARTIN CORP",
       "Symbol": "LOM.F",
-      "BuyingDate": "2018-03-23T00:00:00+01:00",
       "BuyingRate": 257.0,
-      "StopRate": 266.4,
-      "Name": "LOCKHEED MARTIN CORP"
-    },
-    {
-      "Symbol": "T1L.F",
       "BuyingDate": "2018-03-23T00:00:00+01:00",
-      "BuyingRate": 10.5,
-      "StopRate": 16.7039986,
-      "Name": "S IMMO AG"
+      "StopRate": 266.4
     },
     {
-      "Symbol": "FOO.F",
-      "BuyingDate": "2018-07-03T00:00:00+02:00",
-      "BuyingRate": 119.18,
-      "StopRate": 115.38,
-      "Name": "SALESFORCE"
-    },
-    {
+      "Name": "PayPal",
       "Symbol": "PYPL.VI",
-      "BuyingDate": "2018-07-12T00:00:00+02:00",
       "BuyingRate": 74.92,
-      "StopRate": 71.1629944,
-      "Name": "PayPal"
+      "BuyingDate": "2018-07-12T00:00:00+02:00",
+      "StopRate": 71.1629944
+    },
+    {
+      "Name": "Visa Inc",
+      "Symbol": "3V64.F",
+      "BuyingRate": 84.0,
+      "BuyingDate": "2018-08-10T08:00:32+02:00",
+      "StopRate": 110.169
+    },
+    {
+      "Name": "Amazon",
+      "Symbol": "AMZ.F",
+      "BuyingRate": 880.445,
+      "BuyingDate": "2018-08-10T14:20:16+02:00",
+      "StopRate": 1494.018,
+      "HasChanged": true
+    },
+    {
+      "Name": "Siltronic AG",
+      "Symbol": "WAF.F",
+      "BuyingRate": 139.8,
+      "BuyingDate": "2018-08-10T13:48:16+02:00",
+      "StopRate": 123.12
+    },
+    {
+      "Name": "Rheinmetall AG",
+      "Symbol": "RHM.F",
+      "BuyingRate": 84.99,
+      "BuyingDate": "2017-04-28T00:00:00+02:00",
+      "StopRate": 105.929993
+    },
+    {
+      "Name": "S IMMO AG",
+      "Symbol": "T1L.F",
+      "BuyingRate": 10.5,
+      "BuyingDate": "2018-03-23T00:00:00+01:00",
+      "StopRate": 16.7039986
+    },
+    {
+      "Name": "Microsoft",
+      "Symbol": "MSF.F",
+      "BuyingRate": 61.5,
+      "BuyingDate": "2018-08-10T08:00:32+02:00",
+      "StopRate": 86.4269943
+    },
+    {
+      "Name": "The Boeing Company",
+      "Symbol": "BCO.F",
+      "BuyingRate": 168.27,
+      "BuyingDate": "2017-02-24T00:00:00",
+      "StopRate": 284.409
+    },
+    {
+      "Name": "SALESFORCE",
+      "Symbol": "FOO.F",
+      "BuyingRate": 119.18,
+      "BuyingDate": "2018-07-03T00:00:00+02:00",
+      "StopRate": 115.38
+    },
+    {
+      "Name": "Adidas AG",
+      "Symbol": "ADS.F",
+      "BuyingRate": 160.6,
+      "BuyingDate": "2017-09-29T00:00:00+02:00",
+      "StopRate": 193.049988
     }
   ]
 }
