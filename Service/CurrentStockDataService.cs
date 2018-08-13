@@ -16,6 +16,20 @@ namespace EasyStocks.Service
     /// </summary>
     private readonly HttpClient _yahooFinanceClient = new HttpClient { BaseAddress = new Uri("https://query1.finance.yahoo.com/v8/finance/chart/") };
 
+    public async Task<AccountItem> FindDailyInformationForShareAsync(string symbol)
+    {
+      var tmpAccountItem = new AccountItem {Symbol = symbol};
+      var actualStockItems = await GetDailyInformationForShareAsync(new[] {tmpAccountItem});
+      var actualStockData = actualStockItems.FirstOrDefault();
+      return actualStockData != null ? new AccountItem
+      {
+        BuyingDate = actualStockData.LastTradingDate,
+        Symbol = actualStockData.Symbol,
+        BuyingRate = actualStockData.CurrentRate,
+        StopRate = actualStockData.CurrentRate * 0.9f
+      } : null;
+    }
+
 
     public async Task<IEnumerable<ActualStockItem>> GetDailyInformationForShareAsync(
       IEnumerable<AccountItem> accountItems)

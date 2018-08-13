@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -44,5 +43,35 @@ namespace EasyStocks.Controllers
       // TODO: should we also update the stop rate here? maybe...
       return Ok(currentStockItems.FirstOrDefault());
     }
+
+    [HttpGet("[action]")]
+    public async Task<ActionResult> FindStockBySymbol([FromQuery]string symbol)
+    {
+      var dailyStockDataService = new CurrentStockDataService();
+      // there can actually be only one stock item since we have used only one symbol here
+      var newAccountItem = await dailyStockDataService.FindDailyInformationForShareAsync(symbol);
+      return Ok(newAccountItem);
+    }
+
+    [HttpPost("[action]")]
+    public async Task<ActionResult> NewAccountItem([FromBody]NewAccountItem newAccountItem)
+    {
+      var accountItemRepository = new AccountItemRepository();
+      var accountItems = await accountItemRepository.ReadFromFile("stocks.json");
+      var accountItem = new AccountItem
+      {
+        BuyingDate = newAccountItem.BuyingDate,
+        BuyingRate = newAccountItem.BuyingRate,
+        Name = newAccountItem.StockName,
+        Symbol = newAccountItem.StockSymbol,
+        StopRate = newAccountItem.StopRate
+      };
+      var accountItemList = accountItems.ToList();
+      accountItemList.Add(accountItem);
+      await accountItemRepository.WriteToFileAsync(accountItemList, "stocks.json");
+      return Ok(true);
+    }
   }
 }
+
+

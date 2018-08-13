@@ -13,7 +13,8 @@ namespace EasyStocks.Model
 
       public async Task WriteToFileAsync(IEnumerable<AccountItem> accountItems, string fileName)
       {
-        var jsonContent = JsonConvert.SerializeObject(accountItems,
+        var accountItemList = new AccountItemList {Items = new List<AccountItem>(accountItems)};
+        var jsonContent = JsonConvert.SerializeObject(accountItemList,
           Formatting.Indented,
           new JsonSerializerSettings
           {
