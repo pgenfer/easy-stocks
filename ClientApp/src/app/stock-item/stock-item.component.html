@@ -48,6 +48,28 @@
           </div>
         </div>
     </div>
+    <div *ngIf='loadingNews'>
+        <hr/>
+        <div>Loading news...</div>
+    </div>
+    <div *ngFor='let newsItem of stockNews'>
+        <hr/>
+        <div class='row no-gutters'>
+            <div [ngClass]='newsItem.hasImage ? "col-10" : "col-12"'>
+                <a href="{{newsItem.url}}">
+                    <div class='news-item__title'>{{newsItem.title}}</div>
+                </a>
+                <div class='row no-gutters'>
+                    <div class='new-item__metadata col-6'>{{newsItem.date | date:'dd.MM.yyyy HH:mm'}}</div>
+                    <a href='{{newsItem.hostName}}' class='new-item__metadata col-6 text-right'>{{newsItem.hostName}}</a>
+                </div>    
+            </div>
+            <div class='col-2' *ngIf='newsItem.hasImage'>
+                <img src="{{newsItem.image}}" class='news-item__image text-center'>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

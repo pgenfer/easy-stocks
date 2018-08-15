@@ -5,3 +5,18 @@
 .stock-item__overall-change{
     color:white;
 }
+
+.news-item__title{
+    font-weight: bold;
+}
+
+.new-item__metadata{
+    font-size:0.8em;
+}
+
+.news-item__image{
+    width:48px;
+    height:48px;
+    margin:10px;
+    object-fit: contain;
+}
