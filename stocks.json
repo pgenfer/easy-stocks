@@ -1,11 +1,11 @@
 {
   "Items": [
     {
-      "Name": "Procter & Gamble",
-      "Symbol": "PRG.F",
-      "BuyingRate": 80.09,
-      "BuyingDate": "2019-01-16T19:29:20+01:00",
-      "StopRate": 79.812,
+      "Name": "Fresenius",
+      "Symbol": "fre.f",
+      "BuyingRate": 49.34,
+      "BuyingDate": "2019-02-20T19:40:00+01:00",
+      "StopRate": 45.2699966,
       "HasChanged": true
     },
     {
@@ -25,11 +25,12 @@
       "HasChanged": true
     },
     {
-      "Name": "Fresenius Medical Care",
-      "Symbol": "FMEA.F",
-      "BuyingRate": 35.4,
-      "BuyingDate": "2019-02-20T12:39:44+01:00",
-      "StopRate": 31.86
+      "Name": "Netflix",
+      "Symbol": "NFC.F",
+      "BuyingRate": 308.81,
+      "BuyingDate": "2019-01-16T19:57:04+01:00",
+      "StopRate": 292.653,
+      "HasChanged": true
     },
     {
       "Name": "Xiaomi",
@@ -40,12 +41,19 @@
       "HasChanged": true
     },
     {
-      "Name": "Netflix",
-      "Symbol": "NFC.F",
-      "BuyingRate": 308.81,
-      "BuyingDate": "2019-01-16T19:57:04+01:00",
-      "StopRate": 292.653,
+      "Name": "Procter & Gamble",
+      "Symbol": "PRG.F",
+      "BuyingRate": 80.09,
+      "BuyingDate": "2019-01-16T19:29:20+01:00",
+      "StopRate": 79.812,
       "HasChanged": true
+    },
+    {
+      "Name": "Fresenius Medical Care",
+      "Symbol": "FMEA.F",
+      "BuyingRate": 35.4,
+      "BuyingDate": "2019-02-20T12:39:44+01:00",
+      "StopRate": 31.86
     },
     {
       "Name": "Allianz",
@@ -55,14 +63,6 @@
       "StopRate": 177.894,
       "HasChanged": true,
       "IsOnWatchList": true
-    },
-    {
-      "Name": "Fresenius",
-      "Symbol": "fre.f",
-      "BuyingRate": 49.34,
-      "BuyingDate": "2019-02-20T19:40:00+01:00",
-      "StopRate": 45.2699966,
-      "HasChanged": true
     }
   ]
 }

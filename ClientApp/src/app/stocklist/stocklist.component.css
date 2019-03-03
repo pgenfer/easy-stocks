@@ -11,7 +11,7 @@
     text-overflow: ellipsis;
     display: inline-block;
     max-width: 100%;
-    color:gray;
+    color:lightgray;
 }
 
 .stock-list__add-button{
