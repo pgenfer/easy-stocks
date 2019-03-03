@@ -6,6 +6,10 @@
     color:white;
 }
 
+.stock-item__checkbox{
+    margin:10px;
+}
+
 .news-item__title{
     font-weight: bold;
 }

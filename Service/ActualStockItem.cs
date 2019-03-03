@@ -24,6 +24,7 @@ namespace EasyStocks.Service
     public bool IsStopRateReached => !AccountItems.All(x => x.StopRate < CurrentRate);
     public bool IsPositive => DailyChange >= 0;
     public float DailyChangeInPercentAbsolute => Math.Abs(DailyChangeInPercent);
+        public bool IsOnWatchList => AccountItems.Any(x => x.IsOnWatchList);
 
     public override string ToString() => $"{Name} {Symbol}";
   }

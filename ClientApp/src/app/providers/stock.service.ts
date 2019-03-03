@@ -87,6 +87,7 @@ export interface AccountItem {
     buyingDate: Date;
     absoluteOverallChangeInPercent: number;
     overallChangeIsPositive: boolean;
+    isOnWatchList: boolean;
 }
 
 /**

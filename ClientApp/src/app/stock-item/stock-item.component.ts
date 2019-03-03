@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { StockService, Stock } from '../providers/stock.service';
+import { StockService, Stock, AccountItem } from '../providers/stock.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -26,6 +26,11 @@ export class StockItemComponent implements OnInit {
   public symbol: string;
   public stockItem: Stock;
   public loadingNews: boolean = true;
+
+  public changeAccountItemWatchListState(accountItem: AccountItem, event: any){
+    accountItem.isOnWatchList = !accountItem.isOnWatchList;
+    console.log(accountItem.isOnWatchList);
+  }
 
   ngOnInit() {
     this.loadingNews = true;

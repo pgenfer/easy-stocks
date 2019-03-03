@@ -24,6 +24,7 @@
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <Compile Remove="Model\AccountItemWithActualData.cs" />
   </ItemGroup>
 
   <ItemGroup>

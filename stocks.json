@@ -1,105 +1,66 @@
 {
   "Items": [
     {
-      "Name": "Allianz SE",
-      "Symbol": "ALV.F",
-      "BuyingRate": 171.66,
-      "BuyingDate": "2017-04-12T00:00:00+02:00",
-      "StopRate": 180.809982
+      "Name": "Coca Cola",
+      "Symbol": "CCC3.F",
+      "BuyingRate": 41.35,
+      "BuyingDate": "2019-01-16T17:04:16+01:00",
+      "StopRate": 39.816,
+      "HasChanged": true
     },
     {
-      "Name": "Allianz SE",
-      "Symbol": "ALV.F",
-      "BuyingRate": 180.416,
-      "BuyingDate": "2017-07-19T00:00:00+02:00",
-      "StopRate": 180.809982
-    },
-    {
-      "Name": "Adidas AG",
-      "Symbol": "ADS.F",
-      "BuyingRate": 160.6,
-      "BuyingDate": "2017-09-29T00:00:00+02:00",
-      "StopRate": 193.049988
+      "Name": "Fresenius",
+      "Symbol": "fre.f",
+      "BuyingRate": 49.34,
+      "BuyingDate": "2019-02-20T19:40:00+01:00",
+      "StopRate": 45.2699966,
+      "HasChanged": true
     },
     {
       "Name": "Amazon",
       "Symbol": "AMZ.F",
-      "BuyingRate": 880.445,
-      "BuyingDate": "2018-08-10T14:20:16+02:00",
-      "StopRate": 1494.018,
+      "BuyingRate": 1448.76,
+      "BuyingDate": "2019-01-30T19:54:56+01:00",
+      "StopRate": 1356.354,
       "HasChanged": true
     },
     {
-      "Name": "Siltronic AG",
-      "Symbol": "WAF.F",
-      "BuyingRate": 139.8,
-      "BuyingDate": "2018-08-10T13:48:16+02:00",
-      "StopRate": 123.12
-    },
-    {
-      "Name": "S IMMO AG",
-      "Symbol": "T1L.F",
-      "BuyingRate": 10.5,
-      "BuyingDate": "2018-03-23T00:00:00+01:00",
-      "StopRate": 16.7039986
-    },
-    {
-      "Name": "PayPal",
-      "Symbol": "PYPL.VI",
-      "BuyingRate": 74.92,
-      "BuyingDate": "2018-07-12T00:00:00+02:00",
-      "StopRate": 71.1629944
-    },
-    {
-      "Name": "Microsoft",
-      "Symbol": "MSF.F",
-      "BuyingRate": 61.5,
-      "BuyingDate": "2018-08-10T08:00:32+02:00",
-      "StopRate": 86.4269943
-    },
-    {
-      "Name": "The Boeing Company",
-      "Symbol": "BCO.F",
-      "BuyingRate": 168.27,
-      "BuyingDate": "2017-02-24T00:00:00",
-      "StopRate": 284.409
-    },
-    {
-      "Name": "LOCKHEED MARTIN CORP",
-      "Symbol": "LOM.F",
-      "BuyingRate": 257.0,
-      "BuyingDate": "2018-03-23T00:00:00+01:00",
-      "StopRate": 266.4
-    },
-    {
-      "Name": "SALESFORCE",
-      "Symbol": "FOO.F",
-      "BuyingRate": 119.18,
-      "BuyingDate": "2018-07-03T00:00:00+02:00",
-      "StopRate": 115.730995,
+      "Name": "Xiaomi",
+      "Symbol": "3CP.F",
+      "BuyingRate": 1.17,
+      "BuyingDate": "2019-01-21T08:30:08+01:00",
+      "StopRate": 1.26,
       "HasChanged": true
     },
     {
-      "Name": "THQ Nordic",
-      "Symbol": "TH9.BE",
-      "BuyingRate": 19.84,
-      "BuyingDate": "2018-08-10T13:24:48+02:00",
-      "StopRate": 17.946,
+      "Name": "Allianz",
+      "Symbol": "ALV.F",
+      "BuyingRate": 180.1,
+      "BuyingDate": "2019-01-16T19:18:40+01:00",
+      "StopRate": 177.894,
       "HasChanged": true
     },
     {
-      "Name": "Rheinmetall AG",
-      "Symbol": "RHM.F",
-      "BuyingRate": 84.99,
-      "BuyingDate": "2017-04-28T00:00:00+02:00",
-      "StopRate": 105.929993
+      "Name": "Fresenius Medical Care",
+      "Symbol": "FMEA.F",
+      "BuyingRate": 35.4,
+      "BuyingDate": "2019-02-20T12:39:44+01:00",
+      "StopRate": 31.86
     },
     {
-      "Name": "Visa Inc",
-      "Symbol": "3V64.F",
-      "BuyingRate": 84.0,
-      "BuyingDate": "2018-08-10T08:00:32+02:00",
-      "StopRate": 110.429993,
+      "Name": "Procter & Gamble",
+      "Symbol": "PRG.F",
+      "BuyingRate": 80.09,
+      "BuyingDate": "2019-01-16T19:29:20+01:00",
+      "StopRate": 79.812,
+      "HasChanged": true
+    },
+    {
+      "Name": "Netflix",
+      "Symbol": "NFC.F",
+      "BuyingRate": 308.81,
+      "BuyingDate": "2019-01-16T19:57:04+01:00",
+      "StopRate": 292.653,
       "HasChanged": true
     }
   ]

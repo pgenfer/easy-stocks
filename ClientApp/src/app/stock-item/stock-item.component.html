@@ -1,75 +1,79 @@
 <div class='container no-gutters' *ngIf='stockItem'>
+  <div class='row no-gutters'>
+    <div class='col-5'>
+      <div class='row no-gutters'>
+        <div class='col stock-item__name' [ngClass]='stockItem.isStopRateReached ? "stock-item__name-stop-reached" : ""'>
+          {{stockItem.name}}
+        </div>
+      </div>
+      <div class='row no-gutters'>
+        <div class='col-3 stock-item__secondary-information'>
+          {{stockItem.symbol}}
+        </div>
+        <div class='col-9 stock-item__secondary-information text-right'>
+          {{stockItem.lastTradingDate | date:'EEEE, HH:mm'}}
+        </div>
+      </div>
+    </div>
+    <div class='col-3 stock-item__current-rate text-center align-self-center'>
+      {{stockItem.currentRate | number:'1.2-2'}}
+    </div>
+    <div class='col-4' [ngClass]='stockItem.isPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
+      <div class='stock-item__change text-center'>
+        {{stockItem.isPositive ? " + " : " - "}}{{stockItem.dailyChangeInPercentAbsolute | number:'1.2-2'}} %
+      </div>
+    </div>
+  </div>
+  <!-- show list of account items for this stock -->
+  <div *ngFor='let accountItem of stockItem.accountItems'>
+    <hr />
     <div class='row no-gutters'>
-      <div class='col-5'>
+      <div class='col-8 stock-item__label'>Buying Date:</div>
+      <div class='col-4 stock-item__label text-center'>{{accountItem.buyingDate | date:'dd.MM.yyyy'}}</div>
+    </div>
+    <div class='row no-gutters'>
+      <div class='col-8 stock-item__label'>Buying Rate:</div>
+      <div class='col-4 stock-item__label text-center'>{{accountItem.buyingRate | number:'1.2-2'}}</div>
+    </div>
+    <div class='row no-gutters'>
+      <div class='col-8 stock-item__label'>Stop Rate:</div>
+      <div class='col-4 stock-item__label text-center'>{{accountItem.stopRate | number:'1.2-2'}}</div>
+    </div>
+    <div class='row no-gutters'>
+      <div class='col-8 stock-item__label'>Overall Change:</div>
+      <div class='col-4 stock-item__label stock-item__overall-change text-center' [ngClass]='accountItem.overallChangeIsPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
+        {{ accountItem.overallChangeIsPositive ? " + " : " - "}}{{accountItem.absoluteOverallChangeInPercent |
+        number:'1.2-2'}} %
+      </div>
+    </div>
+    <div class='row no-gutters'>
+        <div class='col-8 stock-item__label'>Is on watch list:</div>
+        <input class='stock-item__checkbox' value="{{accountItem.isOnWatchList}}" 
+                type="checkbox" 
+                checked="accountItem.isOnWatchList"
+                (change)='changeAccountItemWatchListState(accountItem,$event)'>
+    </div>
+  </div>
+  <div *ngIf='loadingNews'>
+    <hr />
+    <div>Loading news...</div>
+  </div>
+  <div *ngFor='let newsItem of stockNews'>
+    <hr />
+    <div class='row no-gutters'>
+      <div [ngClass]='newsItem.hasImage ? "col-10" : "col-12"'>
+        <a href="{{newsItem.url}}">
+          <div class='news-item__title'>{{newsItem.title}}</div>
+        </a>
         <div class='row no-gutters'>
-          <div class='col stock-item__name'
-               [ngClass]='stockItem.isStopRateReached ? "stock-item__name-stop-reached" : ""'>
-            {{stockItem.name}}
-          </div>
-        </div>
-        <div class='row no-gutters'>
-          <div class='col-3 stock-item__secondary-information'>
-            {{stockItem.symbol}}
-          </div>
-          <div class='col-9 stock-item__secondary-information text-right'>
-              {{stockItem.lastTradingDate | date:'EEEE, HH:mm'}}
-          </div>
+          <div class='new-item__metadata col-6'>{{newsItem.date | date:'dd.MM.yyyy HH:mm'}}</div>
+          <a href='{{newsItem.hostName}}' class='new-item__metadata col-6 text-right'>{{newsItem.hostName}}</a>
         </div>
       </div>
-      <div class='col-3 stock-item__current-rate text-center align-self-center'>
-          {{stockItem.currentRate | number:'1.2-2'}}
-      </div>
-      <div class='col-4' [ngClass]='stockItem.isPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
-          <div class='stock-item__change text-center'>
-              {{stockItem.isPositive ? " + " : " - "}}{{stockItem.dailyChangeInPercentAbsolute | number:'1.2-2'}} %
-          </div>
+      <div class='col-2' *ngIf='newsItem.hasImage'>
+        <img src="{{newsItem.image}}" class='news-item__image text-center'>
       </div>
     </div>
-    <!-- show list of account items for this stock -->
-    <div *ngFor='let accountItem of stockItem.accountItems'>
-      <hr/>
-      <div class='row no-gutters'>
-        <div class='col-8 stock-item__label'>Buying Date:</div>
-        <div class='col-4 stock-item__label text-center'>{{accountItem.buyingDate | date:'dd.MM.yyyy'}}</div>
-      </div>
-      <div class='row no-gutters'>
-          <div class='col-8 stock-item__label'>Buying Rate:</div>
-          <div class='col-4 stock-item__label text-center'>{{accountItem.buyingRate | number:'1.2-2'}}</div>
-      </div>
-      <div class='row no-gutters'>
-          <div class='col-8 stock-item__label'>Stop Rate:</div>
-          <div class='col-4 stock-item__label text-center'>{{accountItem.stopRate | number:'1.2-2'}}</div>
-      </div>
-      <div class='row no-gutters'>
-          <div class='col-8 stock-item__label'>Overall Change:</div>
-          <div class='col-4 stock-item__label stock-item__overall-change text-center' 
-          [ngClass]='accountItem.overallChangeIsPositive ? "stock-item__change-background-positive" : "stock-item__change-background-negative"'>
-              {{ accountItem.overallChangeIsPositive ? " + " : " - "}}{{accountItem.absoluteOverallChangeInPercent | number:'1.2-2'}} %
-          </div>
-        </div>
-    </div>
-    <div *ngIf='loadingNews'>
-        <hr/>
-        <div>Loading news...</div>
-    </div>
-    <div *ngFor='let newsItem of stockNews'>
-        <hr/>
-        <div class='row no-gutters'>
-            <div [ngClass]='newsItem.hasImage ? "col-10" : "col-12"'>
-                <a href="{{newsItem.url}}">
-                    <div class='news-item__title'>{{newsItem.title}}</div>
-                </a>
-                <div class='row no-gutters'>
-                    <div class='new-item__metadata col-6'>{{newsItem.date | date:'dd.MM.yyyy HH:mm'}}</div>
-                    <a href='{{newsItem.hostName}}' class='new-item__metadata col-6 text-right'>{{newsItem.hostName}}</a>
-                </div>    
-            </div>
-            <div class='col-2' *ngIf='newsItem.hasImage'>
-                <img src="{{newsItem.image}}" class='news-item__image text-center'>
-            </div>
-        </div>
-    </div>
+  </div>
 
 </div>
-
-
