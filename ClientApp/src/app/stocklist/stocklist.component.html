@@ -4,6 +4,8 @@
     <div class='col-5'>
       <div class='row no-gutters'>
         <div class='col stock-item__name'
+          
+            [class.stock-list__on-watch-list]='stockItem.isOnWatchList'
              [ngClass]='stockItem.isStopRateReached ? "stock-item__name-stop-reached" : ""'>
           {{stockItem.name}}
         </div>

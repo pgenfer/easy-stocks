@@ -2,11 +2,15 @@
     font-size:1.0em;
 }
 
+.stock-item__label--watch-list{
+    color: gray;
+}
+
 .stock-item__overall-change{
     color:white;
 }
 
-.stock-item__checkbox{
+.stock-item__button{
     margin:10px;
 }
 

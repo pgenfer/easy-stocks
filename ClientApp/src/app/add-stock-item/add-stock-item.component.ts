@@ -52,6 +52,10 @@ export class AddStockItemComponent implements OnInit {
     this._router.navigateByUrl('/stocks');
   }
 
+  public changeStockItemWatchListState(event: any){
+    this.newAccountItem.isOnWatchList = !this.newAccountItem.isOnWatchList;
+  }
+
   public saveStock(): void {
     this._stockService.createNewAccountItem(this.newAccountItem).subscribe(
       x => {

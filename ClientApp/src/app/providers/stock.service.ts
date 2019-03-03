@@ -58,6 +58,14 @@ export class StockService {
         result => resultSource.next(result));
       return resultSource.asObservable();
     }
+
+    public setOnWatchList(symbol: string, isOnWatchList: boolean) {
+      const headers = new HttpHeaders().set('content-type', 'application/json');
+      this._http.post<{symbol:string,isOnWatchList:boolean}>(`${this._baseUrl}api/Stocks/SetOnWatchList/`, 
+      {symbol,isOnWatchList}, {headers}).subscribe(
+        result => console.log(result)
+      );
+    }
 }
 
 /**
@@ -76,6 +84,7 @@ export interface Stock {
     isPositive: boolean;
     isStopRateReached: boolean;
     accountItems: AccountItem[];
+    isOnWatchList: boolean;
   }
   /**
    * an account item represents a single stock position
@@ -87,7 +96,6 @@ export interface AccountItem {
     buyingDate: Date;
     absoluteOverallChangeInPercent: number;
     overallChangeIsPositive: boolean;
-    isOnWatchList: boolean;
 }
 
 /**
@@ -101,4 +109,5 @@ export class NewAccountItem {
     buyingDate: Date;
     stopRate: number;
     isStockFound = false;
+    isOnWatchList = false;
 }

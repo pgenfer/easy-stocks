@@ -64,13 +64,27 @@ namespace EasyStocks.Controllers
         BuyingRate = newAccountItem.BuyingRate,
         Name = newAccountItem.StockName,
         Symbol = newAccountItem.StockSymbol,
-        StopRate = newAccountItem.StopRate
+        StopRate = newAccountItem.StopRate,
+                IsOnWatchList = newAccountItem.IsOnWatchList
       };
       var accountItemList = accountItems.ToList();
       accountItemList.Add(accountItem);
       await accountItemRepository.WriteToFileAsync(accountItemList, "stocks.json");
       return Ok(true);
     }
+
+        [HttpPost("[action]")]
+        public async Task<ActionResult> SetOnWatchList([FromBody]SetOnWatchList setOnWatchList)
+        {
+            var accountItemRepository = new AccountItemRepository();
+            var accountItems = await accountItemRepository.ReadFromFile("stocks.json");
+            foreach( var accountItem in accountItems.Where(x => x.Symbol == setOnWatchList.Symbol))
+            {
+                accountItem.IsOnWatchList = setOnWatchList.IsOnWatchList;
+            }
+            await accountItemRepository.WriteToFileAsync(accountItems, "stocks.json");
+            return Ok(true);
+        }
   }
 }
 

@@ -27,9 +27,9 @@ export class StockItemComponent implements OnInit {
   public stockItem: Stock;
   public loadingNews: boolean = true;
 
-  public changeAccountItemWatchListState(accountItem: AccountItem, event: any){
-    accountItem.isOnWatchList = !accountItem.isOnWatchList;
-    console.log(accountItem.isOnWatchList);
+  public changeStockItemWatchListState(event: any){
+    this.stockItem.isOnWatchList = !this.stockItem.isOnWatchList;
+    this._stockService.setOnWatchList(this.stockItem.symbol,this.stockItem.isOnWatchList);
   }
 
   ngOnInit() {

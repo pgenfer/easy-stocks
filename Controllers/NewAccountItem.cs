@@ -9,5 +9,6 @@ namespace EasyStocks.Controllers
     public float BuyingRate;
     public DateTime BuyingDate;
     public float StopRate;
+        public bool IsOnWatchList;
   }
 }

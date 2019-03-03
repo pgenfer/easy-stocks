@@ -16,7 +16,7 @@
       {{message}}
     </p>
   </div>
-  
+
 
   <div *ngIf='newAccountItem.isStockFound'>
     <div class="form-group">
@@ -31,15 +31,15 @@
 
     <div class="form-group">
       <label for="buyingDate">Buying Date</label>
-      <input type="datetime" class="form-control" 
-      id="buyingDate" 
-      [(ngModel)] ="newAccountItem.buyingDate" 
-      name="buyingDate">
+      <input type="datetime" class="form-control" id="buyingDate" [(ngModel)]="newAccountItem.buyingDate" name="buyingDate">
     </div>
 
+    <div class='btn btn-primary stock-item__button float-right' (click)='changeStockItemWatchListState($event)'>
+      {{newAccountItem.isOnWatchList ? "remove from watchlist" : "add to watchlist"}}
+    </div>
     <div class='btn btn btn-secondary float-right newstockitem__button' (click)='cancel()'>Cancel
     </div>
     <div class='btn btn btn-success float-right newstockitem__button' (click)='saveStock()'>Save
     </div>
-  </div>  
+  </div>
 </div>

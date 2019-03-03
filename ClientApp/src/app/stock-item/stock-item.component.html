@@ -2,7 +2,8 @@
   <div class='row no-gutters'>
     <div class='col-5'>
       <div class='row no-gutters'>
-        <div class='col stock-item__name' [ngClass]='stockItem.isStopRateReached ? "stock-item__name-stop-reached" : ""'>
+        <div class='col stock-item__name' 
+        [ngClass]='stockItem.isOnWatchList ? "stock-item__label--watch-list" : (stockItem.isStopRateReached ? "stock-item__name-stop-reached" : "")'>
           {{stockItem.name}}
         </div>
       </div>
@@ -47,11 +48,12 @@
       </div>
     </div>
     <div class='row no-gutters'>
-        <div class='col-8 stock-item__label'>Is on watch list:</div>
-        <input class='stock-item__checkbox' value="{{accountItem.isOnWatchList}}" 
-                type="checkbox" 
-                checked="accountItem.isOnWatchList"
-                (change)='changeAccountItemWatchListState(accountItem,$event)'>
+        <div class='col-8 stock-item__label'></div>
+        <div class='col-4 text-center'>
+            <button class='btn btn-primary stock-item__button text-center' (click)='changeStockItemWatchListState($event)'>
+                {{stockItem.isOnWatchList ? "remove from watchlist" : "add to watchlist"}}
+            </button>    
+        </div> 
     </div>
   </div>
   <div *ngIf='loadingNews'>
