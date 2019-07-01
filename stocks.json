@@ -1,27 +1,53 @@
 {
   "Items": [
     {
-      "Name": "Fresenius",
-      "Symbol": "fre.f",
-      "BuyingRate": 49.34,
-      "BuyingDate": "2019-02-20T19:40:00+01:00",
-      "StopRate": 45.2699966,
+      "Name": "Zoetis",
+      "Symbol": "ZOE.F",
+      "BuyingRate": 86.59,
+      "BuyingDate": "2019-03-19T17:59:44+01:00",
+      "StopRate": 92.34,
       "HasChanged": true
+    },
+    {
+      "Name": "Nestle",
+      "Symbol": "NESR.F",
+      "BuyingRate": 81.88,
+      "BuyingDate": "2019-03-07T19:48:32+01:00",
+      "StopRate": 82.8269958,
+      "HasChanged": true
+    },
+    {
+      "Name": "Fondak",
+      "Symbol": "HJVJ.BE",
+      "BuyingRate": 162.14,
+      "BuyingDate": "2019-03-08T19:12:16+01:00",
+      "StopRate": 159.066,
+      "HasChanged": true,
+      "IsOnWatchList": true
     },
     {
       "Name": "Amazon",
       "Symbol": "AMZ.F",
       "BuyingRate": 1448.76,
       "BuyingDate": "2019-01-30T19:54:56+01:00",
-      "StopRate": 1356.354,
+      "StopRate": 1578.24,
       "HasChanged": true
     },
     {
-      "Name": "Coca Cola",
-      "Symbol": "CCC3.F",
-      "BuyingRate": 41.35,
-      "BuyingDate": "2019-01-16T17:04:16+01:00",
-      "StopRate": 39.816,
+      "Name": "IWS Fonds",
+      "Symbol": "HJUF.F",
+      "BuyingRate": 158.495,
+      "BuyingDate": "2019-03-08T19:50:40+01:00",
+      "StopRate": 153.8955,
+      "HasChanged": true,
+      "IsOnWatchList": true
+    },
+    {
+      "Name": "Flughafen Wien",
+      "Symbol": "FLW1.F",
+      "BuyingRate": 37.85,
+      "BuyingDate": "2019-03-19T17:23:28+01:00",
+      "StopRate": 35.64,
       "HasChanged": true
     },
     {
@@ -29,23 +55,7 @@
       "Symbol": "NFC.F",
       "BuyingRate": 308.81,
       "BuyingDate": "2019-01-16T19:57:04+01:00",
-      "StopRate": 292.653,
-      "HasChanged": true
-    },
-    {
-      "Name": "Xiaomi",
-      "Symbol": "3CP.F",
-      "BuyingRate": 1.17,
-      "BuyingDate": "2019-01-21T08:30:08+01:00",
-      "StopRate": 1.26,
-      "HasChanged": true
-    },
-    {
-      "Name": "Procter & Gamble",
-      "Symbol": "PRG.F",
-      "BuyingRate": 80.09,
-      "BuyingDate": "2019-01-16T19:29:20+01:00",
-      "StopRate": 79.812,
+      "StopRate": 308.475,
       "HasChanged": true
     },
     {
@@ -53,16 +63,72 @@
       "Symbol": "FMEA.F",
       "BuyingRate": 35.4,
       "BuyingDate": "2019-02-20T12:39:44+01:00",
-      "StopRate": 31.86
+      "StopRate": 33.8399963,
+      "HasChanged": true
+    },
+    {
+      "Name": "Immo Invest",
+      "Symbol": "S3EA.F",
+      "BuyingRate": 5.415,
+      "BuyingDate": "2019-03-08T15:43:12+01:00",
+      "StopRate": 4.8888,
+      "HasChanged": true
+    },
+    {
+      "Name": "Coca Cola",
+      "Symbol": "CCC3.F",
+      "BuyingRate": 41.35,
+      "BuyingDate": "2019-01-16T17:04:16+01:00",
+      "StopRate": 41.3999977,
+      "HasChanged": true
+    },
+    {
+      "Name": "Procter & Gamble",
+      "Symbol": "PRG.F",
+      "BuyingRate": 80.09,
+      "BuyingDate": "2019-01-16T19:29:20+01:00",
+      "StopRate": 89.54099,
+      "HasChanged": true
+    },
+    {
+      "Name": "Xiaomi",
+      "Symbol": "3CP.F",
+      "BuyingRate": 1.17,
+      "BuyingDate": "2019-01-21T08:30:08+01:00",
+      "StopRate": 1.27799988,
+      "HasChanged": true
+    },
+    {
+      "Name": "US Dividend Aristocrats ETF",
+      "Symbol": "USDV.MI",
+      "BuyingRate": 48.03,
+      "BuyingDate": "2019-03-07T17:21:20+01:00",
+      "StopRate": 45.135,
+      "HasChanged": true
     },
     {
       "Name": "Allianz",
       "Symbol": "ALV.F",
       "BuyingRate": 180.1,
       "BuyingDate": "2019-01-16T19:18:40+01:00",
-      "StopRate": 177.894,
-      "HasChanged": true,
-      "IsOnWatchList": true
+      "StopRate": 194.084991,
+      "HasChanged": true
+    },
+    {
+      "Name": "Fresenius",
+      "Symbol": "fre.f",
+      "BuyingRate": 49.34,
+      "BuyingDate": "2019-02-20T19:40:00+01:00",
+      "StopRate": 47.3939972,
+      "HasChanged": true
+    },
+    {
+      "Name": "Ferrari",
+      "Symbol": "2FE.DE",
+      "BuyingRate": 142.55,
+      "BuyingDate": "2019-06-25T11:14:40+02:00",
+      "StopRate": 129.915009,
+      "HasChanged": true
     }
   ]
 }

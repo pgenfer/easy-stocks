@@ -74,10 +74,17 @@ namespace EasyStocks.Service
               var timestamps = new List<float>();
               var unadjcloses = new List<float>();
 
-              foreach (var timestamp in timestampEntries)
-                timestamps.Add(float.Parse(timestamp.ToString(), CultureInfo.CurrentCulture));
-              foreach (var unadjclose in unadjclosEntries)
-                unadjcloses.Add(float.Parse(unadjclose.ToString(), CultureInfo.CurrentCulture));
+              if (timestampEntries != null)
+              {
+                foreach (var timestamp in timestampEntries)
+                  timestamps.Add(float.Parse(timestamp.ToString(), CultureInfo.CurrentCulture));
+              }
+
+              if (unadjclosEntries != null)
+              {
+                foreach (var unadjclose in unadjclosEntries)
+                  unadjcloses.Add(float.Parse(unadjclose.ToString(), CultureInfo.CurrentCulture));
+              }
               // we need at least two timestamp data to calculate the difference
               // if we have only one timestamp, we assume there was no change since the last time
               if (timestamps.Count < 1)
